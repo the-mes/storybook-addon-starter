@@ -13,7 +13,7 @@ addons.register(ADDON_ID, () => {
     </AddonPanel>
   );
 
-  const title = 'Share Storybook';
+  const title = 'Storybook Addon Starter';
 
   addons.add(PANEL_ID, {
     type: types.PANEL,

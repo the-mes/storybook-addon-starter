@@ -1,3 +1,3 @@
-export const ADDON_ID = 'share-storybook';
+export const ADDON_ID = 'storybook-addon-starter';
 export const PANEL_ID = `${ADDON_ID}/panel`;
-export const PARAM_KEY = 'share';
+export const PARAM_KEY = 'starter';

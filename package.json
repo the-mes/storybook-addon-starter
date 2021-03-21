@@ -1,7 +1,7 @@
 {
-  "name": "share-storybook",
+  "name": "storybook-addon-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "<TODO>",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "dist/index.js",
@@ -18,7 +18,8 @@
   },
   "keywords": [
     "storybook",
-    "react"
+    "react",
+    "<TODO>"
   ],
   "files": [
     "dist/**/*",
