@@ -1,25 +1,37 @@
 {
   "name": "storybook-addon-starter",
   "version": "0.0.0",
-  "description": "<TODO>",
+  "description": "Template for Storybook Addon",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prebuild": "rimraf dist/*",
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
     "storybook": "start-storybook -p 6006",
-    "prettier": "prettier --write 'src/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
+    "//prettier": "prettier --write 'src/**/*' 'test/**/*' 'README.md' '/docs/**/*.md'",
+    "prettier": "prettier --write 'src/**/*.{html,scss,css,tsx,ts}'",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/the-mes/storybook-addon-starter.git"
   },
   "keywords": [
-    "storybook",
     "react",
-    "<TODO>"
+    "stories",
+    "template",
+    "typescript",
+    "extension",
+    "addon",
+    "starter",
+    "storybook"
   ],
   "files": [
     "dist/**/*",
@@ -27,26 +39,33 @@
   ],
   "homepage": "",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@storybook/addon-links": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
-    "@storybook/api": "^5.3.18",
-    "@storybook/components": "^5.3.18",
-    "@storybook/react": "^5.3.18",
-    "@types/node": "^13.13.5",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "@types/react-json-tree": "^0.6.11",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.1.0",
-    "gh-pages": "^2.2.0",
-    "prettier": "^2.0.5",
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/api": "^6.3.12",
+    "@storybook/components": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@storybook/storybook-deployer": "^2.8.10",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "babel-loader": "^8.2.3",
+    "gh-pages": "^3.2.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "typescript": "^3.8.3"
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "npm run lint",
+      "npm run prettier"
+    ]
   }
 }
